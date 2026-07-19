@@ -149,7 +149,7 @@ export default function App() {
   const [showGuide, setShowGuide] = useState(true);
   
   // API Key management states
-  const [geminiApiKey, setGeminiApiKey] = useState(() => localStorage.getItem('gemini_api_key') || '');
+  const [geminiApiKey, setGeminiApiKey] = useState(() => localStorage.getItem('gemini_api_key') || (import.meta.env.VITE_GEMINI_API_KEY || '') as string);
   const [showSettings, setShowSettings] = useState(false);
   const [tempKey, setTempKey] = useState(geminiApiKey);
   const [showKeyText, setShowKeyText] = useState(false);
